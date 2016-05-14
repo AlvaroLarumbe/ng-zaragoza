@@ -1,0 +1,20 @@
+<div *ngIf="lastUpdated" class="label label-primary pull-right">Actualizado: {{lastUpdated}}</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Bicis disponibles</th>
+            <th>Anclajes disponibles</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bikeStation of bikeStations">
+            <td>{{bikeStation.id}}</td>
+            <td>{{bikeStation.title}}</td>
+            <td>{{bikeStation.bicisDisponibles}}</td>
+            <td>{{bikeStation.anclajesDisponibles}}</td>
+        </tr>
+    </tbody>
+</table>

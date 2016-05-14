@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Routes} from '@angular/router';
 
-import {BikesComponent} from "../bikes/bikes.component";
+import {BikeStationsComponent} from "../bike-stations/bike-stations.component";
 
 @Component({
     selector: 'ng-zaragoza',
@@ -19,8 +19,8 @@ import {BikesComponent} from "../bikes/bikes.component";
 })
 @Routes([
     {
-        path: '/bikes',
-        component: BikesComponent
+        path: '/estaciones-bici',
+        component: BikeStationsComponent
     }
 ])
 export class AppComponent {
