@@ -1,7 +1,5 @@
 import {Component} from '@angular/core';
-import {ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Routes} from '@angular/router';
-
-import {BikeStationsComponent} from "../bike-stations/bike-stations.component";
+import {ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
     selector: 'ng-zaragoza',
@@ -12,17 +10,8 @@ import {BikeStationsComponent} from "../bike-stations/bike-stations.component";
     ],
     directives: [
         ROUTER_DIRECTIVES
-    ],
-    providers: [
-        ROUTER_PROVIDERS
     ]
 })
-@Routes([
-    {
-        path: '/estaciones-bici',
-        component: BikeStationsComponent
-    }
-])
 export class AppComponent {
 
 }
