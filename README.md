@@ -3,7 +3,7 @@ Zaragoza Open Data using Angular 2 + TypeScript
 
 :construction: Work In Progress ...
 
-![](http://i.imgur.com/YrD05ER.png)
+![](http://i.imgur.com/oypepNJ.png)
 
 ## Upcoming features
 * Filtering in tables
