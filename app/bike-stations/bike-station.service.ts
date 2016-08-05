@@ -8,7 +8,7 @@ import {BikeStation} from "./bike-station";
 export class BikeStationService {
     constructor(private http: Http) {}
 
-    private bikeStationsUrl = 'http://www.zaragoza.es/api/recurso/urbanismo-infraestructuras/estacion-bicicleta.json?rf=html&results_only=false&srsname=utm30n';
+    private bikeStationsUrl = 'http://www.zaragoza.es/api/recurso/urbanismo-infraestructuras/estacion-bicicleta.json?rf=html&results_only=false&srsname=wgs84';
 
     getBikeStations(): Observable<BikeStation[]> {
         return this.http.get(this.bikeStationsUrl)

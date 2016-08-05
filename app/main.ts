@@ -1,5 +1,6 @@
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {HTTP_PROVIDERS} from '@angular/http';
+import {GOOGLE_MAPS_PROVIDERS} from 'angular2-google-maps/core';
 
 import {AppComponent} from './app/app.component';
 import {APP_ROUTER_PROVIDERS} from './app/app.routes';
@@ -13,5 +14,6 @@ import 'rxjs/add/observable/throw';
 //noinspection TypeScriptValidateTypes
 bootstrap(AppComponent, [
     APP_ROUTER_PROVIDERS,
-    HTTP_PROVIDERS
+    HTTP_PROVIDERS,
+    GOOGLE_MAPS_PROVIDERS
 ]);

@@ -1,20 +1,35 @@
-<div *ngIf="lastUpdated" class="label label-primary pull-right">Actualizado: {{lastUpdated}}</div>
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Título</th>
-            <th>Bicis disponibles</th>
-            <th>Anclajes disponibles</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let bikeStation of bikeStations">
-            <td>{{bikeStation.id}}</td>
-            <td>{{bikeStation.title}}</td>
-            <td>{{bikeStation.bicisDisponibles}}</td>
-            <td>{{bikeStation.anclajesDisponibles}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="row">
+    <div class="col-md-6">
+        <sebm-google-map [latitude]="41.65" [longitude]="-0.899" [zoom]="13">
+            <sebm-google-map-marker 
+                *ngFor="let bikeStation of bikeStations" 
+                [latitude]="bikeStation.geometry.coordinates[1]" 
+                [longitude]="bikeStation.geometry.coordinates[0]">
+            </sebm-google-map-marker>
+        </sebm-google-map>
+    </div>
+    <div class="col-md-6" style="height: 600px; overflow-y: scroll;">
+        <div class="table-responsive">
+            <table class="table table-striped pull-right">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Bicis disponibles</th>
+                        <th>Anclajes disponibles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let bikeStation of bikeStations">
+                        <td>{{bikeStation.title}}</td>
+                        <td>{{bikeStation.bicisDisponibles}}</td>
+                        <td>{{bikeStation.anclajesDisponibles}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div *ngIf="lastUpdated" class="label label-primary">Última actualización: {{lastUpdated}}</div>
+</div>

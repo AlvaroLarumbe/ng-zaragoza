@@ -4,4 +4,5 @@ export class BikeStation {
     bicisDisponibles: number;
     anclajesDisponibles: number;
     lastUpdated: string;
+    geometry: string[];
 }
