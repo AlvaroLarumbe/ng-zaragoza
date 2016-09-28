@@ -6,3 +6,4 @@ app/**/*.js.map
 app/**/*.js
 !app/lib/*.js
 !app/lib/*.js.map
+.vscode/

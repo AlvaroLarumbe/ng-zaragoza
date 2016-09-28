@@ -4,14 +4,24 @@
             <sebm-google-map-marker 
                 *ngFor="let bikeStation of bikeStations" 
                 [latitude]="bikeStation.geometry.coordinates[1]" 
-                [longitude]="bikeStation.geometry.coordinates[0]">
+                [longitude]="bikeStation.geometry.coordinates[0]"
+                [iconUrl]="bikeStation.icon">
+                <sebm-google-map-info-window [disableAutoPan]="true">
+                    <b>{{bikeStation.title}}</b><br/>
+                    Bicis disponibles: {{bikeStation.bicisDisponibles}}<br/>
+                    Anclajes disponibles: {{bikeStation.anclajesDisponibles}}
+                </sebm-google-map-info-window>
             </sebm-google-map-marker>
         </sebm-google-map>
     </div>
     <div class="col-md-6" style="height: 600px; overflow-y: scroll;">
         <div class="table-responsive">
-            <table class="table table-striped pull-right">
-                <thead>
+            <ng-table class="table table-striped pull-right" 
+                [config]="config.sorting"
+                (tableChanged)="onChangeTable(config)"
+                [rows]="rows"
+                [columns]="columns">
+                <!--<thead>
                     <tr>
                         <th>Título</th>
                         <th>Bicis disponibles</th>
@@ -24,8 +34,8 @@
                         <td>{{bikeStation.bicisDisponibles}}</td>
                         <td>{{bikeStation.anclajesDisponibles}}</td>
                     </tr>
-                </tbody>
-            </table>
+                </tbody>-->
+            </ng-table>
         </div>
     </div>
 </div>
